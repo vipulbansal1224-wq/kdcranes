@@ -61,7 +61,7 @@ export const contactSlides = [
   }
 ];
 
-export default function ContactHeroSlider({ onOpenDealerModal }) {
+export default function ContactHeroSlider() {
   const [currentIdx, setCurrentIdx] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
@@ -88,23 +88,26 @@ export default function ContactHeroSlider({ onOpenDealerModal }) {
       style={{
         position: "relative",
         width: "100%",
-        minHeight: "520px",
+        minHeight: "560px",
+        height: "60vh",
+        maxHeight: "750px",
         overflow: "hidden",
         backgroundColor: "#000000"
       }}
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      {/* HD Crisp Background Banner Images Carousel (R1 - R7) */}
+      {/* Fully Stretched HD Background Banner Images Carousel (R1 - R7) */}
       {contactSlides.map((slide, idx) => (
         <div
           key={slide.id}
           style={{
             position: "absolute",
             inset: 0,
-            backgroundImage: `linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.45) 50%, rgba(0, 0, 0, 0.2) 100%), url('${slide.bgImage}')`,
+            backgroundImage: `linear-gradient(to right, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.15) 100%), url('${slide.bgImage}')`,
             backgroundSize: "cover",
-            backgroundPosition: "center",
+            backgroundPosition: "center center",
+            backgroundRepeat: "no-repeat",
             opacity: idx === currentIdx ? 1 : 0,
             transition: "opacity 0.8s ease-in-out",
             zIndex: idx === currentIdx ? 1 : 0
@@ -121,7 +124,8 @@ export default function ContactHeroSlider({ onOpenDealerModal }) {
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
-          minHeight: "520px",
+          height: "100%",
+          minHeight: "560px",
           padding: "60px 20px 80px",
           color: "#ffffff"
         }}
@@ -129,12 +133,12 @@ export default function ContactHeroSlider({ onOpenDealerModal }) {
         <div
           style={{
             maxWidth: "720px",
-            background: "rgba(0, 0, 0, 0.5)",
-            padding: "32px",
-            borderRadius: "20px",
+            background: "rgba(0, 0, 0, 0.55)",
+            padding: "32px 36px",
+            borderRadius: "24px",
             backdropFilter: "blur(6px)",
             border: "1px solid rgba(255, 255, 255, 0.2)",
-            boxShadow: "0 20px 50px rgba(0,0,0,0.6)"
+            boxShadow: "0 25px 50px rgba(0,0,0,0.7)"
           }}
         >
           <div
@@ -142,7 +146,7 @@ export default function ContactHeroSlider({ onOpenDealerModal }) {
               display: "inline-block",
               background: "linear-gradient(135deg, #ff9900, #e68a00)",
               color: "#000000",
-              padding: "4px 14px",
+              padding: "5px 16px",
               borderRadius: "20px",
               fontSize: "12px",
               fontWeight: 800,
@@ -156,13 +160,13 @@ export default function ContactHeroSlider({ onOpenDealerModal }) {
 
           <h1
             style={{
-              fontSize: "36px",
+              fontSize: "38px",
               fontFamily: "Outfit, sans-serif",
               fontWeight: 800,
-              lineHeight: 1.2,
+              lineHeight: 1.18,
               marginBottom: "16px",
               color: "#ffffff",
-              textShadow: "0 2px 10px rgba(0,0,0,0.8)"
+              textShadow: "0 2px 12px rgba(0,0,0,0.9)"
             }}
           >
             {current.title}
@@ -174,7 +178,7 @@ export default function ContactHeroSlider({ onOpenDealerModal }) {
               color: "#f1f5f9",
               marginBottom: "28px",
               lineHeight: 1.6,
-              textShadow: "0 1px 4px rgba(0,0,0,0.8)"
+              textShadow: "0 1px 6px rgba(0,0,0,0.9)"
             }}
           >
             {current.subtitle}
@@ -226,8 +230,8 @@ export default function ContactHeroSlider({ onOpenDealerModal }) {
           top: "50%",
           transform: "translateY(-50%)",
           zIndex: 20,
-          width: "50px",
-          height: "50px",
+          width: "52px",
+          height: "52px",
           borderRadius: "50%",
           background: "rgba(0, 0, 0, 0.75)",
           color: "#ffffff",
@@ -237,7 +241,8 @@ export default function ContactHeroSlider({ onOpenDealerModal }) {
           alignItems: "center",
           justifyContent: "center",
           cursor: "pointer",
-          transition: "all 0.3s ease"
+          transition: "all 0.3s ease",
+          boxShadow: "0 4px 15px rgba(0,0,0,0.5)"
         }}
       >
         ❮
@@ -252,8 +257,8 @@ export default function ContactHeroSlider({ onOpenDealerModal }) {
           top: "50%",
           transform: "translateY(-50%)",
           zIndex: 20,
-          width: "50px",
-          height: "50px",
+          width: "52px",
+          height: "52px",
           borderRadius: "50%",
           background: "rgba(0, 0, 0, 0.75)",
           color: "#ffffff",
@@ -263,7 +268,8 @@ export default function ContactHeroSlider({ onOpenDealerModal }) {
           alignItems: "center",
           justifyContent: "center",
           cursor: "pointer",
-          transition: "all 0.3s ease"
+          transition: "all 0.3s ease",
+          boxShadow: "0 4px 15px rgba(0,0,0,0.5)"
         }}
       >
         ❯
@@ -273,7 +279,7 @@ export default function ContactHeroSlider({ onOpenDealerModal }) {
       <div
         style={{
           position: "absolute",
-          bottom: "20px",
+          bottom: "24px",
           left: "50%",
           transform: "translateX(-50%)",
           zIndex: 20,

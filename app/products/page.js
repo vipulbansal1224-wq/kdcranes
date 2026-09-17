@@ -8,7 +8,7 @@ import Footer from "../../components/Footer";
 import ProductModal from "../../components/ProductModal";
 import EnquiryModal from "../../components/EnquiryModal";
 import DealerModal from "../../components/DealerModal";
-import { categories, products } from "../data/siteData";
+import { categories, products } from "../../data/siteData";
 
 export default function ProductsPage() {
   const [selectedCategory, setSelectedCategory] = useState("all");
@@ -78,7 +78,7 @@ export default function ProductsPage() {
               marginBottom: "16px"
             }}
           >
-            KD Enterprises • Complete Range of {products.length} Products
+            KD Enterprises • Complete Range of All {products.length} Products
           </div>
 
           <h1
@@ -91,7 +91,7 @@ export default function ProductsPage() {
               lineHeight: 1.2
             }}
           >
-            Complete E.O.T Crane Products & Spares Catalog ({products.length} Items)
+            All {products.length} E.O.T Crane Products & Spares
           </h1>
 
           <p
@@ -103,13 +103,13 @@ export default function ProductsPage() {
               lineHeight: 1.6
             }}
           >
-            Select any item from the dropdown list below to inspect full specifications, parameters, and instant factory price quotes.
+            Select any of our {products.length} manufactured items from the dropdown list below to inspect technical parameters and request factory quotes.
           </p>
 
           {/* Search & Dropdown Controls Box */}
           <div
             style={{
-              maxWidth: "760px",
+              maxWidth: "780px",
               margin: "0 auto",
               display: "flex",
               gap: "14px",
@@ -118,7 +118,7 @@ export default function ProductsPage() {
             }}
           >
             {/* Direct Product Dropdown Menu */}
-            <div style={{ flex: "1 1 340px", position: "relative" }}>
+            <div style={{ flex: "1 1 360px", position: "relative" }}>
               <select
                 value={selectedDropdownProduct}
                 onChange={handleDropdownChange}
@@ -126,7 +126,7 @@ export default function ProductsPage() {
                   width: "100%",
                   padding: "16px 20px",
                   borderRadius: "30px",
-                  border: "2px solid #ff9900",
+                  border: "3px solid #ff9900",
                   background: "#ffffff",
                   color: "#021245",
                   fontSize: "15px",
@@ -136,7 +136,7 @@ export default function ProductsPage() {
                   boxShadow: "0 10px 30px rgba(0,0,0,0.3)"
                 }}
               >
-                <option value="">▼ Select Any Product ({products.length} Items)...</option>
+                <option value="">▼ Select Any Product (All {products.length} Products Available)...</option>
                 {products.map((p, idx) => (
                   <option key={p.id} value={p.id}>
                     {idx + 1}. {p.name}
@@ -149,7 +149,7 @@ export default function ProductsPage() {
             <div style={{ flex: "1 1 300px", position: "relative" }}>
               <input
                 type="text"
-                placeholder="Search all 25+ products..."
+                placeholder={`Search all ${products.length} products...`}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 style={{
@@ -259,7 +259,7 @@ export default function ProductsPage() {
                   cursor: "pointer"
                 }}
               >
-                Reset Search & Show All 25+ Products ✕
+                Reset Search & Show All {products.length} Products ✕
               </button>
             )}
           </div>
