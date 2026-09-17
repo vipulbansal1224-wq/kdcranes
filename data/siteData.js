@@ -51,7 +51,7 @@ export const products = [
       "Ideal for indoor & outdoor EOT overhead crane runways"
     ],
     badge: "Best Seller",
-    imageUrl: "https://kdcranes.com/wp-content/uploads/2023/01/pic-19.jpeg"
+    imageUrl: "/images/pic-19.jpeg"
   },
   {
     id: "current-collector-shoe",
@@ -72,7 +72,7 @@ export const products = [
       "Easy shoe replacement design"
     ],
     badge: "Popular",
-    imageUrl: "https://kdcranes.com/wp-content/uploads/2023/01/eot-cranes-current-collector-500x500-1.webp"
+    imageUrl: "/images/eot-cranes-current-collector-500x500-1.webp"
   },
   {
     id: "wireless-radio-remote-6d-8d",
@@ -94,7 +94,7 @@ export const products = [
       "Over 4.3 billion unique security ID codes"
     ],
     badge: "Featured",
-    imageUrl: "https://kdcranes.com/wp-content/uploads/2023/01/pic-10-1.jpg"
+    imageUrl: "/images/pic-10-1.jpg"
   },
   {
     id: "lever-limit-switch",
@@ -115,7 +115,7 @@ export const products = [
       "Supports counter-weight and rotary action mechanisms"
     ],
     badge: "Safety Grade",
-    imageUrl: "https://kdcranes.com/wp-content/uploads/2023/01/lever-type-limit-switch-500x500-1.webp"
+    imageUrl: "/images/lever-type-limit-switch-500x500-1.webp"
   },
   {
     id: "hydraulic-thruster-brake",
@@ -136,7 +136,7 @@ export const products = [
       "Complies with IS 3938 crane manufacturing standards"
     ],
     badge: "Heavy Duty",
-    imageUrl: "https://kdcranes.com/wp-content/uploads/2023/01/pic-6-1.jpg"
+    imageUrl: "/images/pic-6-1.jpg"
   },
   {
     id: "wire-rope-hoist-1t-10t",
@@ -157,7 +157,7 @@ export const products = [
       "Overload protection limiter option available"
     ],
     badge: "Top Rated",
-    imageUrl: "https://kdcranes.com/wp-content/uploads/2023/01/pic-16-1.jpeg"
+    imageUrl: "/images/pic-16-1.jpeg"
   },
   {
     id: "crane-trolleys-and-hooks",
@@ -178,7 +178,25 @@ export const products = [
       "Forged crane hooks tested under 200% proof load"
     ],
     badge: "Essential",
-    imageUrl: "https://kdcranes.com/wp-content/uploads/2023/01/WhatsApp-Image-2023-01-28-at-15.20.04.jpeg"
+    imageUrl: "/images/WhatsApp-Image-2023-01-28-at-15.20.04.jpeg"
+  },
+  {
+    id: "gravity-type-collector",
+    slug: "gravity-type-current-collector",
+    name: "Gravity Type Current Collector Assembly",
+    category: "collectors",
+    shortDesc: "Precision gravity type current collector assembly for seamless alignment and heavy duty power transmission.",
+    specs: [
+      { key: "Current Rating", value: "100A, 125A, 250A" },
+      { key: "Mechanism", value: "Gravity Counterbalanced Swivel Arm" },
+      { key: "Shoe Material", value: "Electrolytic Copper" }
+    ],
+    features: [
+      "Maintains constant pressure on shrouded busbars",
+      "Minimal wear and zero contact loss during crane motion"
+    ],
+    badge: "Precision",
+    imageUrl: "/images/gravity-type-current-collector-500x500-1.webp"
   }
 ];
 
@@ -188,7 +206,7 @@ export const heroSlides = [
     subtitle: "Pioneer manufacturer of EOT Crane Spare Parts, DSL Busbar Systems, and Current Collectors in Ludhiana, Punjab.",
     btnText: "Explore Portfolio",
     btnLink: "/products",
-    badgeImg: "https://kdcranes.com/wp-content/uploads/2023/02/exclusive-gold-badge-color-46166840-150x150.jpg",
+    badgeImg: "/images/exclusive-gold-badge-color-46166840-150x150.jpg",
     bgPattern: "linear-gradient(135deg, #021245 0%, #0a2570 100%)"
   },
   {
@@ -196,7 +214,7 @@ export const heroSlides = [
     subtitle: "Safe, compact, and touch-proof enclosed shrouded conductor bus bar systems from 60A to 400A.",
     btnText: "View Busbar Specs",
     btnLink: "/products/dsl-busbar-system-125amp",
-    badgeImg: "https://kdcranes.com/wp-content/uploads/2023/01/pic-19.jpeg",
+    badgeImg: "/images/banner-2-1.jpg",
     bgPattern: "linear-gradient(135deg, #061954 0%, #0d3b9e 100%)"
   },
   {
@@ -204,7 +222,7 @@ export const heroSlides = [
     subtitle: "Heavy duty electrolytic copper current collector shoes (60A, 100A, 125A, 200A, 250A, 400A).",
     btnText: "View Collector Range",
     btnLink: "/products/eot-crane-current-collector",
-    badgeImg: "https://kdcranes.com/wp-content/uploads/2023/01/eot-cranes-current-collector-500x500-1.webp",
+    badgeImg: "/images/eot-cranes-current-collector-500x500-1.webp",
     bgPattern: "linear-gradient(135deg, #021245 0%, #1a4da6 100%)"
   },
   {
@@ -212,8 +230,48 @@ export const heroSlides = [
     subtitle: "Ergonomic 6D & 8D industrial wireless radio remote control transmitters with IP65 protection.",
     btnText: "Download Brochure",
     btnLink: "/download",
-    badgeImg: "https://kdcranes.com/wp-content/uploads/2023/01/pic-10-1.jpg",
+    badgeImg: "/images/pic-10-1.jpg",
     bgPattern: "linear-gradient(135deg, #0b2066 0%, #021245 100%)"
+  },
+  {
+    title: "Lever Limit Switches for EOT Cranes",
+    subtitle: "Rugged die-cast aluminum lever limit switches with instant trip action for heavy duty cranes.",
+    btnText: "View Limit Switches",
+    btnLink: "/products/lever-limit-switch-for-eot-crane",
+    badgeImg: "/images/lever-type-limit-switch-500x500-1.webp",
+    bgPattern: "linear-gradient(135deg, #03144d 0%, #0c3384 100%)"
+  },
+  {
+    title: "Electro-Hydraulic Thruster Brakes",
+    subtitle: "Smooth braking and holding capacity up to 5000 Nm for crane hoist and travel drives.",
+    btnText: "View Thruster Brakes",
+    btnLink: "/products/hydraulic-thruster-brake",
+    badgeImg: "/images/pic-6-1.jpg",
+    bgPattern: "linear-gradient(135deg, #010c30 0%, #0c3384 100%)"
+  },
+  {
+    title: "Wire Rope Hoists & Chain Pulley Blocks",
+    subtitle: "Industrial lifting capacity from 1 Ton to 10 Ton with precision machined helical alloy gears.",
+    btnText: "Explore Hoists",
+    btnLink: "/products/electric-wire-rope-hoist",
+    badgeImg: "/images/pic-16-1.jpeg",
+    bgPattern: "linear-gradient(135deg, #041852 0%, #1346af 100%)"
+  },
+  {
+    title: "Crane Trolleys & Festoon Cable Systems",
+    subtitle: "Complete festoon cable carry trolleys, I-Beam trolleys, and 200% proof load tested forged hooks.",
+    btnText: "View Accessories",
+    btnLink: "/products/crane-trolleys-and-forged-hooks",
+    badgeImg: "/images/WhatsApp-Image-2023-01-28-at-15.20.04.jpeg",
+    bgPattern: "linear-gradient(135deg, #021245 0%, #082470 100%)"
+  },
+  {
+    title: "Direct Factory Sales - Ludhiana HQ",
+    subtitle: "Get factory-direct pricing and technical support directly from Mr. Pankesh Thakur & team.",
+    btnText: "Contact Factory",
+    btnLink: "/contact",
+    badgeImg: "/images/contact_us_banner_1_1787745511731.jpg",
+    bgPattern: "linear-gradient(135deg, #051a59 0%, #1a4da6 100%)"
   }
 ];
 
