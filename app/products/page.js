@@ -13,6 +13,7 @@ import { categories, products } from "../data/siteData";
 export default function ProductsPage() {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const [selectedDropdownProduct, setSelectedDropdownProduct] = useState("");
   const [quoteProduct, setQuoteProduct] = useState(null);
   const [showQuoteModal, setShowQuoteModal] = useState(false);
   const [showDealerModal, setShowDealerModal] = useState(false);
@@ -20,15 +21,27 @@ export default function ProductsPage() {
 
   const filteredProducts = products.filter((item) => {
     const matchesCategory = selectedCategory === "all" || item.category === selectedCategory;
+    const matchesDropdown = selectedDropdownProduct === "" || item.id === selectedDropdownProduct;
     const matchesSearch =
       item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       item.shortDesc.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchesCategory && matchesSearch;
+    return matchesCategory && matchesDropdown && matchesSearch;
   });
 
   const handleOpenQuote = (prod = null) => {
     setQuoteProduct(prod);
     setShowQuoteModal(true);
+  };
+
+  const handleDropdownChange = (e) => {
+    const value = e.target.value;
+    setSelectedDropdownProduct(value);
+    if (value !== "") {
+      const found = products.find((p) => p.id === value);
+      if (found) {
+        setSelectedProduct(found);
+      }
+    }
   };
 
   return (
@@ -66,7 +79,7 @@ export default function ProductsPage() {
               marginBottom: "16px"
             }}
           >
-            KD Enterprises • 25+ Full Product Range
+            KD Enterprises • Complete 25+ Product Portfolio
           </div>
 
           <h1
@@ -79,7 +92,7 @@ export default function ProductsPage() {
               lineHeight: 1.2
             }}
           >
-            E.O.T Crane Spare Parts & Industrial Products
+            Full E.O.T Crane Spare Parts & Products List
           </h1>
 
           <p
@@ -91,41 +104,81 @@ export default function ProductsPage() {
               lineHeight: 1.6
             }}
           >
-            Explore our complete industrial product catalogue including DSL Busbar Systems, Current Collectors, Radio Remote Controls, Limit Switches, Thruster Brakes, Wire Rope Hoists, and Trolleys.
+            Browse and inspect all 25+ industrial products manufactured by KD Enterprises. Use the dropdown menu below or categories to filter any item.
           </p>
 
-          {/* Search Box */}
-          <div style={{ maxWidth: "540px", margin: "0 auto", position: "relative" }}>
-            <input
-              type="text"
-              placeholder="Search by product name or spec (e.g. 125A Busbar, Remote, Collector)..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              style={{
-                width: "100%",
-                padding: "16px 24px",
-                paddingRight: "50px",
-                borderRadius: "30px",
-                border: "2px solid rgba(255,255,255,0.2)",
-                background: "rgba(255, 255, 255, 0.95)",
-                color: "#0f172a",
-                fontSize: "15px",
-                outline: "none",
-                boxShadow: "0 10px 30px rgba(0,0,0,0.3)"
-              }}
-            />
-            <span
-              style={{
-                position: "absolute",
-                right: "20px",
-                top: "50%",
-                transform: "translateY(-50%)",
-                fontSize: "18px",
-                color: "#64748b"
-              }}
-            >
-              🔍
-            </span>
+          {/* Search & Dropdown Controls Box */}
+          <div
+            style={{
+              maxWidth: "760px",
+              margin: "0 auto",
+              display: "flex",
+              gap: "14px",
+              flexWrap: "wrap",
+              justifyContent: "center"
+            }}
+          >
+            {/* Direct Product Dropdown Menu */}
+            <div style={{ flex: "1 1 300px", position: "relative" }}>
+              <select
+                value={selectedDropdownProduct}
+                onChange={handleDropdownChange}
+                style={{
+                  width: "100%",
+                  padding: "16px 20px",
+                  borderRadius: "30px",
+                  border: "2px solid rgba(255,255,255,0.3)",
+                  background: "#ffffff",
+                  color: "#021245",
+                  fontSize: "15px",
+                  fontWeight: 700,
+                  outline: "none",
+                  cursor: "pointer",
+                  boxShadow: "0 10px 30px rgba(0,0,0,0.3)"
+                }}
+              >
+                <option value="">▼ Select Any Product (All 25+ Products)...</option>
+                {products.map((p, idx) => (
+                  <option key={p.id} value={p.id}>
+                    {idx + 1}. {p.name}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            {/* Search Box Input */}
+            <div style={{ flex: "1 1 300px", position: "relative" }}>
+              <input
+                type="text"
+                placeholder="Search products..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                style={{
+                  width: "100%",
+                  padding: "16px 24px",
+                  paddingRight: "50px",
+                  borderRadius: "30px",
+                  border: "2px solid rgba(255,255,255,0.3)",
+                  background: "rgba(255, 255, 255, 0.95)",
+                  color: "#0f172a",
+                  fontSize: "15px",
+                  outline: "none",
+                  boxShadow: "0 10px 30px rgba(0,0,0,0.3)"
+                }}
+              />
+              <span
+                style={{
+                  position: "absolute",
+                  right: "20px",
+                  top: "50%",
+                  transform: "translateY(-50%)",
+                  fontSize: "18px",
+                  color: "#64748b"
+                }}
+              >
+                🔍
+              </span>
+            </div>
           </div>
         </div>
       </section>
@@ -147,7 +200,10 @@ export default function ProductsPage() {
               return (
                 <button
                   key={cat.id}
-                  onClick={() => setSelectedCategory(cat.id)}
+                  onClick={() => {
+                    setSelectedCategory(cat.id);
+                    setSelectedDropdownProduct("");
+                  }}
                   style={{
                     padding: "10px 22px",
                     borderRadius: "30px",
@@ -184,8 +240,29 @@ export default function ProductsPage() {
             }}
           >
             <h2 style={{ fontSize: "24px", fontWeight: 800, color: "#021245", fontFamily: "Outfit, sans-serif" }}>
-              Total Products ({filteredProducts.length})
+              Showing {filteredProducts.length} of {products.length} Products
             </h2>
+            {(selectedDropdownProduct !== "" || searchQuery !== "" || selectedCategory !== "all") && (
+              <button
+                onClick={() => {
+                  setSelectedCategory("all");
+                  setSelectedDropdownProduct("");
+                  setSearchQuery("");
+                }}
+                style={{
+                  background: "#e2e8f0",
+                  color: "#0f172a",
+                  padding: "8px 18px",
+                  borderRadius: "20px",
+                  border: "none",
+                  fontWeight: 700,
+                  fontSize: "13px",
+                  cursor: "pointer"
+                }}
+              >
+                Clear All Filters ✕
+              </button>
+            )}
           </div>
 
           <div

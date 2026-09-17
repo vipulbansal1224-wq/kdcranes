@@ -7,6 +7,7 @@ import HeroSlider from "../components/HeroSlider";
 import PioneerSection from "../components/PioneerSection";
 import StatsSection from "../components/StatsSection";
 import TestimonialsSection from "../components/TestimonialsSection";
+import FooterBannerSlider from "../components/FooterBannerSlider";
 import Footer from "../components/Footer";
 import ProductModal from "../components/ProductModal";
 import EnquiryModal from "../components/EnquiryModal";
@@ -33,8 +34,11 @@ export default function HomePage() {
       <HeroSlider onOpenQuoteModal={() => handleOpenQuote(null)} />
       <PioneerSection />
       <StatsSection />
-      {/* Product grid removed from home page as all 25+ products are showcased in /gallery and /products */}
       <TestimonialsSection />
+
+      {/* R1-R7 Banner Slider right above Footer */}
+      <FooterBannerSlider />
+
       <Footer />
 
       {selectedProduct && (
