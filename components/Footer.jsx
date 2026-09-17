@@ -47,13 +47,15 @@ export default function Footer() {
           </div>
 
           <div className="footer-col">
-            <h4>Ludhiana Sales Office</h4>
+            <h4>KD Enterprises HQ</h4>
             <div style={{ fontSize: "14px", lineHeight: "1.7" }}>
               <p>📍 {siteInfo.address}</p>
-              <p style={{ marginTop: "10px" }}>📞 {siteInfo.phone}</p>
-              <p>☎️ {siteInfo.landline}</p>
-              <p style={{ marginTop: "10px" }}>✉️ {siteInfo.email}</p>
-              <p>✉️ {siteInfo.secondaryEmail}</p>
+              <p style={{ marginTop: "10px" }}>
+                📞 <a href={`tel:${siteInfo.phone}`} style={{ color: "#ff9900", textDecoration: "none", fontWeight: 700 }}>{siteInfo.phone}</a>
+              </p>
+              <p style={{ marginTop: "10px" }}>
+                ✉️ <a href={`mailto:${siteInfo.email}`} style={{ color: "#ffffff", textDecoration: "none" }}>{siteInfo.email}</a>
+              </p>
             </div>
           </div>
         </div>

@@ -18,8 +18,12 @@ export default function TopBar() {
 
         <div className="top-right">
           <span className="gst-badge">GSTIN: {siteInfo.gstin}</span>
-          <span>📞 {siteInfo.phone}</span>
-          <span>✉️ {siteInfo.email}</span>
+          <a href={`tel:${siteInfo.phone}`} style={{ color: "inherit", textDecoration: "none" }}>
+            📞 {siteInfo.phone}
+          </a>
+          <a href={`mailto:${siteInfo.email}`} style={{ color: "inherit", textDecoration: "none" }}>
+            ✉️ {siteInfo.email}
+          </a>
         </div>
       </div>
     </div>
