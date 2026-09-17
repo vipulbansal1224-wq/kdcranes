@@ -147,6 +147,16 @@ export default function Header({ onOpenDealerModal, onOpenCatalogModal }) {
               <Link href="/contact" className="nav-link">Contact Us</Link>
             </li>
           </ul>
+
+          <div className="nav-right-info">
+            <span className="nav-gst-badge">GSTIN: {siteInfo.gstin}</span>
+            <a href={`tel:${siteInfo.phone}`} className="nav-contact-item">
+              📞 {siteInfo.phone}
+            </a>
+            <a href={`mailto:${siteInfo.email}`} className="nav-contact-item">
+              ✉️ {siteInfo.email}
+            </a>
+          </div>
         </div>
       </nav>
     </header>
