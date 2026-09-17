@@ -3,6 +3,7 @@
 import { useState } from "react";
 import TopBar from "../../components/TopBar";
 import Header from "../../components/Header";
+import FooterBannerSlider from "../../components/FooterBannerSlider";
 import Footer from "../../components/Footer";
 import DealerModal from "../../components/DealerModal";
 import { siteInfo } from "../data/siteData";
@@ -371,7 +372,7 @@ export default function ContactPage() {
       </section>
 
       {/* Google Maps Location Section */}
-      <section style={{ padding: "0 0 80px", background: "#f8fafc" }}>
+      <section style={{ padding: "0 0 60px", background: "#f8fafc" }}>
         <div className="container">
           <div
             style={{
@@ -424,6 +425,9 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+
+      {/* R1-R7 Banner Slider on Contact Page */}
+      <FooterBannerSlider />
 
       <Footer />
 
