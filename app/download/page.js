@@ -42,7 +42,7 @@ export default function DownloadPage() {
                   boxShadow: "0 4px 15px rgba(0,0,0,0.06)",
                   border: "1px solid #e2e8f0",
                   display: "flex",
-                  justify-content: "space-between",
+                  justifyContent: "space-between",
                   alignItems: "center",
                   flexWrap: "wrap",
                   gap: "20px"
