@@ -3,7 +3,7 @@
 import { useState } from "react";
 import TopBar from "../../components/TopBar";
 import Header from "../../components/Header";
-import FooterBannerSlider from "../../components/FooterBannerSlider";
+import ContactHeroSlider from "../../components/ContactHeroSlider";
 import Footer from "../../components/Footer";
 import DealerModal from "../../components/DealerModal";
 import { siteInfo } from "../data/siteData";
@@ -29,65 +29,11 @@ export default function ContactPage() {
       <TopBar />
       <Header onOpenDealerModal={() => setShowDealerModal(true)} />
 
-      {/* Hero Banner Section */}
-      <section
-        style={{
-          background: "linear-gradient(135deg, #021245 0%, #0a2570 100%)",
-          color: "#ffffff",
-          padding: "70px 0 50px",
-          textAlign: "center",
-          position: "relative",
-          overflow: "hidden"
-        }}
-      >
-        <div className="container" style={{ position: "relative", zIndex: 2 }}>
-          <div
-            style={{
-              display: "inline-block",
-              background: "rgba(255, 153, 0, 0.2)",
-              border: "1px solid #ff9900",
-              color: "#ff9900",
-              padding: "6px 18px",
-              borderRadius: "30px",
-              fontSize: "13px",
-              fontWeight: 700,
-              textTransform: "uppercase",
-              letterSpacing: "1px",
-              marginBottom: "16px"
-            }}
-          >
-            Factory & Sales Support • Sahnewal, Ludhiana
-          </div>
-
-          <h1
-            style={{
-              fontSize: "42px",
-              fontWeight: 800,
-              fontFamily: "Outfit, sans-serif",
-              color: "#ffffff",
-              marginBottom: "14px",
-              lineHeight: 1.2
-            }}
-          >
-            Contact KD Enterprises
-          </h1>
-
-          <p
-            style={{
-              color: "#cbd5e1",
-              fontSize: "17px",
-              maxWidth: "750px",
-              margin: "0 auto",
-              lineHeight: 1.6
-            }}
-          >
-            Get in touch directly with Mr. Pankesh Thakur and our engineering sales team for quotes, dealer inquiries, and technical support.
-          </p>
-        </div>
-      </section>
+      {/* Main R1-R7 Banner Slider at TOP of Contact Page */}
+      <ContactHeroSlider onOpenDealerModal={() => setShowDealerModal(true)} />
 
       {/* Contact Cards Grid & Inquiry Form */}
-      <section style={{ padding: "70px 0 40px", background: "#f8fafc" }}>
+      <section style={{ padding: "70px 0 40px", background: "#f8fafc" }} id="inquiry-form">
         <div className="container">
           {/* Quick Contact Cards */}
           <div
@@ -372,7 +318,7 @@ export default function ContactPage() {
       </section>
 
       {/* Google Maps Location Section */}
-      <section style={{ padding: "0 0 60px", background: "#f8fafc" }}>
+      <section style={{ padding: "0 0 80px", background: "#f8fafc" }} id="map-section">
         <div className="container">
           <div
             style={{
@@ -425,9 +371,6 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-
-      {/* R1-R7 Banner Slider on Contact Page */}
-      <FooterBannerSlider />
 
       <Footer />
 

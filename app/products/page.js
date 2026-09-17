@@ -21,11 +21,10 @@ export default function ProductsPage() {
 
   const filteredProducts = products.filter((item) => {
     const matchesCategory = selectedCategory === "all" || item.category === selectedCategory;
-    const matchesDropdown = selectedDropdownProduct === "" || item.id === selectedDropdownProduct;
     const matchesSearch =
       item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       item.shortDesc.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchesCategory && matchesDropdown && matchesSearch;
+    return matchesCategory && matchesSearch;
   });
 
   const handleOpenQuote = (prod = null) => {
@@ -79,7 +78,7 @@ export default function ProductsPage() {
               marginBottom: "16px"
             }}
           >
-            KD Enterprises • Complete 25+ Product Portfolio
+            KD Enterprises • Complete Range of {products.length} Products
           </div>
 
           <h1
@@ -92,7 +91,7 @@ export default function ProductsPage() {
               lineHeight: 1.2
             }}
           >
-            Full E.O.T Crane Spare Parts & Products List
+            Complete E.O.T Crane Products & Spares Catalog ({products.length} Items)
           </h1>
 
           <p
@@ -104,7 +103,7 @@ export default function ProductsPage() {
               lineHeight: 1.6
             }}
           >
-            Browse and inspect all 25+ industrial products manufactured by KD Enterprises. Use the dropdown menu below or categories to filter any item.
+            Select any item from the dropdown list below to inspect full specifications, parameters, and instant factory price quotes.
           </p>
 
           {/* Search & Dropdown Controls Box */}
@@ -119,7 +118,7 @@ export default function ProductsPage() {
             }}
           >
             {/* Direct Product Dropdown Menu */}
-            <div style={{ flex: "1 1 300px", position: "relative" }}>
+            <div style={{ flex: "1 1 340px", position: "relative" }}>
               <select
                 value={selectedDropdownProduct}
                 onChange={handleDropdownChange}
@@ -127,17 +126,17 @@ export default function ProductsPage() {
                   width: "100%",
                   padding: "16px 20px",
                   borderRadius: "30px",
-                  border: "2px solid rgba(255,255,255,0.3)",
+                  border: "2px solid #ff9900",
                   background: "#ffffff",
                   color: "#021245",
                   fontSize: "15px",
-                  fontWeight: 700,
+                  fontWeight: 800,
                   outline: "none",
                   cursor: "pointer",
                   boxShadow: "0 10px 30px rgba(0,0,0,0.3)"
                 }}
               >
-                <option value="">▼ Select Any Product (All 25+ Products)...</option>
+                <option value="">▼ Select Any Product ({products.length} Items)...</option>
                 {products.map((p, idx) => (
                   <option key={p.id} value={p.id}>
                     {idx + 1}. {p.name}
@@ -150,7 +149,7 @@ export default function ProductsPage() {
             <div style={{ flex: "1 1 300px", position: "relative" }}>
               <input
                 type="text"
-                placeholder="Search products..."
+                placeholder="Search all 25+ products..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 style={{
@@ -242,7 +241,7 @@ export default function ProductsPage() {
             <h2 style={{ fontSize: "24px", fontWeight: 800, color: "#021245", fontFamily: "Outfit, sans-serif" }}>
               Showing {filteredProducts.length} of {products.length} Products
             </h2>
-            {(selectedDropdownProduct !== "" || searchQuery !== "" || selectedCategory !== "all") && (
+            {(searchQuery !== "" || selectedCategory !== "all") && (
               <button
                 onClick={() => {
                   setSelectedCategory("all");
@@ -260,7 +259,7 @@ export default function ProductsPage() {
                   cursor: "pointer"
                 }}
               >
-                Clear All Filters ✕
+                Reset Search & Show All 25+ Products ✕
               </button>
             )}
           </div>
@@ -275,12 +274,13 @@ export default function ProductsPage() {
             {filteredProducts.map((prod) => (
               <div
                 key={prod.id}
+                id={`product-${prod.id}`}
                 style={{
                   background: "#ffffff",
                   borderRadius: "20px",
                   overflow: "hidden",
-                  border: "1px solid #e2e8f0",
-                  boxShadow: "0 8px 30px rgba(0, 0, 0, 0.05)",
+                  border: selectedDropdownProduct === prod.id ? "3px solid #ff9900" : "1px solid #e2e8f0",
+                  boxShadow: selectedDropdownProduct === prod.id ? "0 10px 40px rgba(255,153,0,0.3)" : "0 8px 30px rgba(0, 0, 0, 0.05)",
                   transition: "all 0.4s ease",
                   display: "flex",
                   flexDirection: "column",
