@@ -30,7 +30,18 @@ export default function Header({ onOpenDealerModal, onOpenCatalogModal }) {
       <div className="middle-bar">
         <div className="container" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "20px" }}>
           <Link href="/" className="logo-brand">
-            <div className="logo-badge">KD</div>
+            <img
+              src="/images/logo.jpg"
+              alt="KD Cranes Logo"
+              style={{
+                height: "52px",
+                width: "auto",
+                maxHeight: "52px",
+                objectFit: "contain",
+                borderRadius: "8px",
+                boxShadow: "0 2px 8px rgba(0,0,0,0.15)"
+              }}
+            />
             <div className="logo-text">
               <h1>{siteInfo.companyName}</h1>
               <p>{siteInfo.brandName}</p>
