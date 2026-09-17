@@ -91,12 +91,12 @@ export default function HeroSlider({ onOpenQuoteModal }) {
   const [currentIdx, setCurrentIdx] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
-  // Auto-play timer
+  // Auto-play timer (changes slide every 3.5 seconds)
   useEffect(() => {
     if (isPaused) return;
     const timer = setInterval(() => {
       setCurrentIdx((prev) => (prev + 1) % slidesData.length);
-    }, 4000);
+    }, 3500);
     return () => clearInterval(timer);
   }, [isPaused]);
 
@@ -115,21 +115,21 @@ export default function HeroSlider({ onOpenQuoteModal }) {
       style={{
         position: "relative",
         width: "100%",
-        minHeight: "520px",
+        minHeight: "560px",
         overflow: "hidden",
-        backgroundColor: "#021245"
+        backgroundColor: "#000000"
       }}
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      {/* Background Image Carousel with smooth crossfade */}
+      {/* HD Crisp Background Banner Image Carousel WITHOUT BLUE OVERLAY */}
       {slidesData.map((slide, idx) => (
         <div
           key={slide.id}
           style={{
             position: "absolute",
             inset: 0,
-            backgroundImage: `linear-gradient(rgba(2, 18, 69, 0.65), rgba(2, 18, 69, 0.75)), url('${slide.bgImage}'), url('${slide.localBg}')`,
+            backgroundImage: `linear-gradient(to right, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.1) 100%), url('${slide.bgImage}'), url('${slide.localBg}')`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             opacity: idx === currentIdx ? 1 : 0,
@@ -148,22 +148,31 @@ export default function HeroSlider({ onOpenQuoteModal }) {
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
-          minHeight: "520px",
+          minHeight: "560px",
           padding: "60px 20px 80px",
           color: "#ffffff"
         }}
       >
-        <div style={{ maxWidth: "720px" }}>
+        <div
+          style={{
+            maxWidth: "700px",
+            background: "rgba(0, 0, 0, 0.45)",
+            padding: "32px",
+            borderRadius: "20px",
+            backdropFilter: "blur(4px)",
+            border: "1px solid rgba(255, 255, 255, 0.15)",
+            boxShadow: "0 20px 50px rgba(0,0,0,0.5)"
+          }}
+        >
           <div
             style={{
               display: "inline-block",
-              background: "rgba(255, 153, 0, 0.25)",
-              color: "#ffaa00",
-              border: "1px solid rgba(255, 153, 0, 0.5)",
+              background: "linear-gradient(135deg, #ff9900, #e68a00)",
+              color: "#000000",
               padding: "4px 14px",
               borderRadius: "20px",
               fontSize: "12px",
-              fontWeight: 700,
+              fontWeight: 800,
               letterSpacing: "1px",
               marginBottom: "16px",
               textTransform: "uppercase"
@@ -174,12 +183,13 @@ export default function HeroSlider({ onOpenQuoteModal }) {
 
           <h2
             style={{
-              fontSize: "42px",
+              fontSize: "38px",
               fontFamily: "Outfit, sans-serif",
               fontWeight: 800,
-              lineHeight: 1.15,
+              lineHeight: 1.18,
               marginBottom: "16px",
-              textShadow: "0 2px 10px rgba(0,0,0,0.5)"
+              color: "#ffffff",
+              textShadow: "0 2px 10px rgba(0,0,0,0.8)"
             }}
           >
             {current.title}
@@ -187,11 +197,11 @@ export default function HeroSlider({ onOpenQuoteModal }) {
 
           <p
             style={{
-              fontSize: "17px",
-              color: "#cbd5e1",
+              fontSize: "16px",
+              color: "#f1f5f9",
               marginBottom: "28px",
               lineHeight: 1.6,
-              textShadow: "0 1px 4px rgba(0,0,0,0.5)"
+              textShadow: "0 1px 4px rgba(0,0,0,0.8)"
             }}
           >
             {current.subtitle}
@@ -201,14 +211,15 @@ export default function HeroSlider({ onOpenQuoteModal }) {
             <Link
               href={current.btnLink}
               style={{
-                background: "linear-gradient(135deg, #ff9900, #e68a00)",
-                color: "#000000",
+                background: "linear-gradient(135deg, #1346af, #061954)",
+                color: "#ffffff",
                 fontWeight: 700,
                 padding: "14px 28px",
                 borderRadius: "30px",
                 fontSize: "15px",
-                boxShadow: "0 4px 15px rgba(255, 153, 0, 0.4)",
-                textDecoration: "none"
+                boxShadow: "0 4px 15px rgba(19, 70, 175, 0.5)",
+                textDecoration: "none",
+                border: "1px solid rgba(255,255,255,0.2)"
               }}
             >
               {current.btnText} →
@@ -216,15 +227,15 @@ export default function HeroSlider({ onOpenQuoteModal }) {
             <button
               onClick={() => onOpenQuoteModal(null)}
               style={{
-                background: "rgba(255, 255, 255, 0.15)",
-                color: "#ffffff",
-                border: "1.5px solid rgba(255, 255, 255, 0.3)",
-                fontWeight: 600,
+                background: "linear-gradient(135deg, #ff9900, #e68a00)",
+                color: "#000000",
+                fontWeight: 700,
                 padding: "14px 28px",
                 borderRadius: "30px",
                 fontSize: "15px",
-                backdropFilter: "blur(8px)",
-                cursor: "pointer"
+                border: "none",
+                cursor: "pointer",
+                boxShadow: "0 4px 15px rgba(255, 153, 0, 0.4)"
               }}
             >
               Request Quick Price Quote
@@ -243,18 +254,19 @@ export default function HeroSlider({ onOpenQuoteModal }) {
           top: "50%",
           transform: "translateY(-50%)",
           zIndex: 20,
-          width: "48px",
-          height: "48px",
+          width: "52px",
+          height: "52px",
           borderRadius: "50%",
-          background: "rgba(0, 0, 0, 0.5)",
+          background: "rgba(0, 0, 0, 0.7)",
           color: "#ffffff",
-          border: "1px solid rgba(255, 255, 255, 0.3)",
+          border: "2px solid rgba(255, 255, 255, 0.5)",
           fontSize: "22px",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
           cursor: "pointer",
-          transition: "all 0.3s ease"
+          transition: "all 0.3s ease",
+          boxShadow: "0 4px 12px rgba(0,0,0,0.5)"
         }}
       >
         ❮
@@ -269,18 +281,19 @@ export default function HeroSlider({ onOpenQuoteModal }) {
           top: "50%",
           transform: "translateY(-50%)",
           zIndex: 20,
-          width: "48px",
-          height: "48px",
+          width: "52px",
+          height: "52px",
           borderRadius: "50%",
-          background: "rgba(0, 0, 0, 0.5)",
+          background: "rgba(0, 0, 0, 0.7)",
           color: "#ffffff",
-          border: "1px solid rgba(255, 255, 255, 0.3)",
+          border: "2px solid rgba(255, 255, 255, 0.5)",
           fontSize: "22px",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
           cursor: "pointer",
-          transition: "all 0.3s ease"
+          transition: "all 0.3s ease",
+          boxShadow: "0 4px 12px rgba(0,0,0,0.5)"
         }}
       >
         ❯
@@ -290,7 +303,7 @@ export default function HeroSlider({ onOpenQuoteModal }) {
       <div
         style={{
           position: "absolute",
-          bottom: "20px",
+          bottom: "24px",
           left: "50%",
           transform: "translateX(-50%)",
           zIndex: 20,
@@ -304,11 +317,11 @@ export default function HeroSlider({ onOpenQuoteModal }) {
             aria-label={`Go to slide ${idx + 1}`}
             onClick={() => setCurrentIdx(idx)}
             style={{
-              width: idx === currentIdx ? "32px" : "12px",
+              width: idx === currentIdx ? "36px" : "12px",
               height: "12px",
               borderRadius: "6px",
-              background: idx === currentIdx ? "#ff9900" : "rgba(255, 255, 255, 0.4)",
-              border: "none",
+              background: idx === currentIdx ? "#ff9900" : "rgba(255, 255, 255, 0.6)",
+              border: "1px solid rgba(0,0,0,0.3)",
               cursor: "pointer",
               transition: "all 0.3s ease"
             }}
