@@ -28,7 +28,7 @@ export default function Header({ onOpenDealerModal, onOpenCatalogModal }) {
   return (
     <header className="site-header">
       <div className="middle-bar">
-        <div className="container" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "20px" }}>
+        <div className="header-full-container">
           <Link href="/" className="logo-brand">
             <img
               src="/images/logo.jpg"
@@ -117,7 +117,7 @@ export default function Header({ onOpenDealerModal, onOpenCatalogModal }) {
       </div>
 
       <nav className="nav-bar">
-        <div className="container nav-container">
+        <div className="nav-container-full">
           <ul className="nav-links">
             <li className="nav-item">
               <Link href="/" className="nav-link">Home</Link>

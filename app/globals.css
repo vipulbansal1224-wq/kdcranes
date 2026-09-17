@@ -135,14 +135,21 @@ button {
   color: var(--accent-gold);
 }
 
-.middle-bar {
-  background: #ffffff;
-  padding: 16px 0;
+.header-full-container {
+  width: 100%;
+  max-width: 100%;
+  padding: 0 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
+}
+
+.middle-bar {
+  background: #ffffff;
+  padding: 16px 0;
   box-shadow: var(--shadow-sm);
+  width: 100%;
 }
 
 .logo-brand {
@@ -269,12 +276,14 @@ button {
   z-index: 100;
 }
 
-.nav-container {
+.nav-container, .nav-container-full {
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: nowrap;
   width: 100%;
+  max-width: 100%;
+  padding: 0 30px;
 }
 
 .nav-links {
