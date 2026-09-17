@@ -98,16 +98,21 @@ button {
 .nav-right-info {
   display: flex;
   align-items: center;
-  gap: 16px;
-  font-size: 13px;
+  gap: 12px;
+  font-size: 12px;
   color: #ffffff;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+  white-space: nowrap;
+  margin-left: auto;
+  padding-left: 10px;
 }
 
 .nav-gst-badge {
   background: rgba(255, 153, 0, 0.2);
   color: #ffaa00;
   border: 1px solid rgba(255, 153, 0, 0.5);
-  padding: 3px 12px;
+  padding: 3px 10px;
   border-radius: 20px;
   font-size: 11px;
   font-weight: 700;
@@ -120,9 +125,10 @@ button {
   font-weight: 600;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
   transition: color 0.2s ease;
   white-space: nowrap;
+  font-size: 12px;
 }
 
 .nav-contact-item:hover {
@@ -267,24 +273,30 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: nowrap;
+  width: 100%;
 }
 
 .nav-links {
   display: flex;
   list-style: none;
   align-items: center;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
 }
 
 .nav-item {
   position: relative;
+  flex-shrink: 0;
 }
 
 .nav-link {
   display: block;
-  padding: 16px 22px;
+  padding: 14px 14px;
   color: #ffffff;
-  font-weight: 500;
-  font-size: 15px;
+  font-weight: 600;
+  font-size: 14px;
+  white-space: nowrap;
   transition: var(--transition);
 }
 
