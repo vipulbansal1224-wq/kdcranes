@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 export const contactSlides = [
   {
     id: 1,
-    title: "CONTACT KD ENTERPRISES - LUDHIANA",
+    title: "KD ENTERPRISES - LUDHIANA HEADQUARTERS",
     subtitle: "Pioneer & Largest Manufacturer of E.O.T Crane Spare Parts, DSL Busbars, and Current Collectors.",
     bgImage: "/images/r1.jpeg",
     btnText: "Call Sales Helpline",
@@ -81,222 +81,135 @@ export default function ContactHeroSlider() {
     setCurrentIdx((prev) => (prev + 1) % contactSlides.length);
   };
 
-  const current = contactSlides[currentIdx];
-
   return (
     <div
       style={{
         position: "relative",
         width: "100%",
-        minHeight: "560px",
-        height: "60vh",
-        maxHeight: "750px",
-        overflow: "hidden",
-        backgroundColor: "#000000"
+        backgroundColor: "#0f172a",
+        overflow: "hidden"
       }}
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      {/* Fully Stretched HD Background Banner Images Carousel (R1 - R7) */}
-      {contactSlides.map((slide, idx) => (
-        <div
-          key={slide.id}
-          style={{
-            position: "absolute",
-            inset: 0,
-            backgroundImage: `linear-gradient(to right, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.15) 100%), url('${slide.bgImage}')`,
-            backgroundSize: "cover",
-            backgroundPosition: "center center",
-            backgroundRepeat: "no-repeat",
-            opacity: idx === currentIdx ? 1 : 0,
-            transition: "opacity 0.8s ease-in-out",
-            zIndex: idx === currentIdx ? 1 : 0
-          }}
-        />
-      ))}
-
-      {/* Hero Banner Content Overlay */}
+      {/* 100% Full Width Crisp HD Banner Container without Blue Overlay or Vertical Cropping */}
       <div
-        className="container"
         style={{
           position: "relative",
-          zIndex: 10,
+          width: "100%",
           display: "flex",
-          flexDirection: "column",
           justifyContent: "center",
-          height: "100%",
-          minHeight: "560px",
-          padding: "60px 20px 80px",
-          color: "#ffffff"
+          alignItems: "center",
+          backgroundColor: "#000000"
         }}
       >
-        <div
+        {contactSlides.map((slide, idx) => (
+          <div
+            key={slide.id}
+            style={{
+              display: idx === currentIdx ? "block" : "none",
+              width: "100%",
+              transition: "opacity 0.6s ease-in-out",
+              textAlign: "center"
+            }}
+          >
+            <img
+              src={slide.bgImage}
+              alt={slide.title}
+              style={{
+                width: "100%",
+                height: "auto",
+                maxHeight: "550px",
+                objectFit: "contain",
+                display: "block",
+                margin: "0 auto",
+                boxShadow: "0 10px 30px rgba(0,0,0,0.5)"
+              }}
+            />
+          </div>
+        ))}
+
+        {/* Clean HD Navigation Arrow Left */}
+        <button
+          onClick={prevSlide}
+          aria-label="Previous Slide"
           style={{
-            maxWidth: "720px",
-            background: "rgba(0, 0, 0, 0.55)",
-            padding: "32px 36px",
-            borderRadius: "24px",
-            backdropFilter: "blur(6px)",
-            border: "1px solid rgba(255, 255, 255, 0.2)",
-            boxShadow: "0 25px 50px rgba(0,0,0,0.7)"
+            position: "absolute",
+            left: "16px",
+            top: "50%",
+            transform: "translateY(-50%)",
+            zIndex: 30,
+            width: "48px",
+            height: "48px",
+            borderRadius: "50%",
+            background: "rgba(0, 0, 0, 0.75)",
+            color: "#ffffff",
+            border: "2px solid #ff9900",
+            fontSize: "20px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            cursor: "pointer",
+            boxShadow: "0 4px 14px rgba(0,0,0,0.6)"
           }}
         >
-          <div
-            style={{
-              display: "inline-block",
-              background: "linear-gradient(135deg, #ff9900, #e68a00)",
-              color: "#000000",
-              padding: "5px 16px",
-              borderRadius: "20px",
-              fontSize: "12px",
-              fontWeight: 800,
-              letterSpacing: "1px",
-              marginBottom: "16px",
-              textTransform: "uppercase"
-            }}
-          >
-            Factory HQ • Sahnewal, Ludhiana, Punjab
-          </div>
+          ❮
+        </button>
 
-          <h1
-            style={{
-              fontSize: "38px",
-              fontFamily: "Outfit, sans-serif",
-              fontWeight: 800,
-              lineHeight: 1.18,
-              marginBottom: "16px",
-              color: "#ffffff",
-              textShadow: "0 2px 12px rgba(0,0,0,0.9)"
-            }}
-          >
-            {current.title}
-          </h1>
-
-          <p
-            style={{
-              fontSize: "16px",
-              color: "#f1f5f9",
-              marginBottom: "28px",
-              lineHeight: 1.6,
-              textShadow: "0 1px 6px rgba(0,0,0,0.9)"
-            }}
-          >
-            {current.subtitle}
-          </p>
-
-          <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
-            <a
-              href={current.btnLink}
-              style={{
-                background: "linear-gradient(135deg, #1346af, #061954)",
-                color: "#ffffff",
-                fontWeight: 700,
-                padding: "14px 28px",
-                borderRadius: "30px",
-                fontSize: "15px",
-                boxShadow: "0 4px 15px rgba(19, 70, 175, 0.5)",
-                textDecoration: "none",
-                border: "1px solid rgba(255,255,255,0.2)"
-              }}
-            >
-              {current.btnText} →
-            </a>
-            <a
-              href="tel:+918146077793"
-              style={{
-                background: "linear-gradient(135deg, #ff9900, #e68a00)",
-                color: "#000000",
-                fontWeight: 800,
-                padding: "14px 28px",
-                borderRadius: "30px",
-                fontSize: "15px",
-                textDecoration: "none",
-                boxShadow: "0 4px 15px rgba(255, 153, 0, 0.4)"
-              }}
-            >
-              📞 +91 8146077793
-            </a>
-          </div>
-        </div>
+        {/* Clean HD Navigation Arrow Right */}
+        <button
+          onClick={nextSlide}
+          aria-label="Next Slide"
+          style={{
+            position: "absolute",
+            right: "16px",
+            top: "50%",
+            transform: "translateY(-50%)",
+            zIndex: 30,
+            width: "48px",
+            height: "48px",
+            borderRadius: "50%",
+            background: "rgba(0, 0, 0, 0.75)",
+            color: "#ffffff",
+            border: "2px solid #ff9900",
+            fontSize: "20px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            cursor: "pointer",
+            boxShadow: "0 4px 14px rgba(0,0,0,0.6)"
+          }}
+        >
+          ❯
+        </button>
       </div>
 
-      {/* Navigation Arrows */}
-      <button
-        onClick={prevSlide}
-        aria-label="Previous Slide"
-        style={{
-          position: "absolute",
-          left: "20px",
-          top: "50%",
-          transform: "translateY(-50%)",
-          zIndex: 20,
-          width: "52px",
-          height: "52px",
-          borderRadius: "50%",
-          background: "rgba(0, 0, 0, 0.75)",
-          color: "#ffffff",
-          border: "2px solid rgba(255, 255, 255, 0.5)",
-          fontSize: "22px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          cursor: "pointer",
-          transition: "all 0.3s ease",
-          boxShadow: "0 4px 15px rgba(0,0,0,0.5)"
-        }}
-      >
-        ❮
-      </button>
-
-      <button
-        onClick={nextSlide}
-        aria-label="Next Slide"
-        style={{
-          position: "absolute",
-          right: "20px",
-          top: "50%",
-          transform: "translateY(-50%)",
-          zIndex: 20,
-          width: "52px",
-          height: "52px",
-          borderRadius: "50%",
-          background: "rgba(0, 0, 0, 0.75)",
-          color: "#ffffff",
-          border: "2px solid rgba(255, 255, 255, 0.5)",
-          fontSize: "22px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          cursor: "pointer",
-          transition: "all 0.3s ease",
-          boxShadow: "0 4px 15px rgba(0,0,0,0.5)"
-        }}
-      >
-        ❯
-      </button>
-
-      {/* Bullet Dots */}
+      {/* Slide Navigation Dots */}
       <div
         style={{
-          position: "absolute",
-          bottom: "24px",
-          left: "50%",
-          transform: "translateX(-50%)",
-          zIndex: 20,
+          background: "#021245",
+          padding: "12px 20px",
           display: "flex",
-          gap: "10px"
+          justifyContent: "center",
+          alignItems: "center",
+          gap: "10px",
+          borderTop: "3px solid #ff9900"
         }}
       >
+        <span style={{ color: "#ffffff", fontSize: "12px", fontWeight: 700, textTransform: "uppercase", marginRight: "12px" }}>
+          KD Enterprises Banner Slider ({currentIdx + 1} / {contactSlides.length})
+        </span>
+
         {contactSlides.map((slide, idx) => (
           <button
             key={slide.id}
             aria-label={`Go to slide ${idx + 1}`}
             onClick={() => setCurrentIdx(idx)}
             style={{
-              width: idx === currentIdx ? "36px" : "12px",
-              height: "12px",
-              borderRadius: "6px",
-              background: idx === currentIdx ? "#ff9900" : "rgba(255, 255, 255, 0.6)",
+              width: idx === currentIdx ? "32px" : "10px",
+              height: "10px",
+              borderRadius: "5px",
+              background: idx === currentIdx ? "#ff9900" : "#64748b",
               border: "none",
               cursor: "pointer",
               transition: "all 0.3s ease"

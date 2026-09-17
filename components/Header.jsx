@@ -119,13 +119,11 @@ export default function Header({ onOpenDealerModal, onOpenCatalogModal }) {
                 Products <span style={{ fontSize: "10px" }}>▼</span>
               </Link>
               <ul className="dropdown-menu">
-                <li><Link href="/products/dsl-busbar-system-125amp">DSL Busbar System</Link></li>
-                <li><Link href="/products/eot-crane-current-collector">Current Collector</Link></li>
-                <li><Link href="/products/eot-crane-wireless-radio-remote-control-system">Wireless Radio Remote</Link></li>
-                <li><Link href="/products/lever-limit-switch-for-eot-crane">Lever Limit Switch</Link></li>
-                <li><Link href="/products/hydraulic-thruster-brake">Hydraulic Thruster Brake</Link></li>
-                <li><Link href="/products/electric-wire-rope-hoist">Wire Rope Hoists</Link></li>
-                <li><Link href="/products/crane-trolleys-and-forged-hooks">Crane Trolleys & Hooks</Link></li>
+                {products.map((item) => (
+                  <li key={item.id}>
+                    <Link href={`/products/${item.slug}`}>{item.name}</Link>
+                  </li>
+                ))}
               </ul>
             </li>
             <li className="nav-item">
