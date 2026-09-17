@@ -21,13 +21,13 @@ export const siteInfo = {
 };
 
 export const categories = [
-  { id: "all", name: "All Products" },
+  { id: "all", name: "All Products (25+)" },
   { id: "busbar", name: "DSL Busbar Systems" },
   { id: "collectors", name: "Current Collectors" },
   { id: "remotes", name: "Radio Remote Control" },
   { id: "switches", name: "Limit Switches" },
   { id: "hoists", name: "Hoists & Trolleys" },
-  { id: "brakes", name: "Brakes & Accessories" }
+  { id: "brakes", name: "Brakes & Wheels" }
 ];
 
 export const products = [
@@ -51,7 +51,8 @@ export const products = [
       "Ideal for indoor & outdoor EOT overhead crane runways"
     ],
     badge: "Best Seller",
-    imageUrl: "/images/pic-19.jpeg"
+    imageUrl: "/images/pic-19.jpeg",
+    fallbackUrl: "https://kdcranes.com/wp-content/uploads/2023/01/pic-19.jpeg"
   },
   {
     id: "current-collector-shoe",
@@ -72,7 +73,8 @@ export const products = [
       "Easy shoe replacement design"
     ],
     badge: "Popular",
-    imageUrl: "/images/eot-cranes-current-collector-500x500-1.webp"
+    imageUrl: "/images/eot-cranes-current-collector-500x500-1.webp",
+    fallbackUrl: "https://kdcranes.com/wp-content/uploads/2023/01/eot-cranes-current-collector-500x500-1.webp"
   },
   {
     id: "wireless-radio-remote-6d-8d",
@@ -94,7 +96,8 @@ export const products = [
       "Over 4.3 billion unique security ID codes"
     ],
     badge: "Featured",
-    imageUrl: "/images/pic-10-1.jpg"
+    imageUrl: "/images/pic-10-1.jpg",
+    fallbackUrl: "https://kdcranes.com/wp-content/uploads/2023/01/pic-10-1.jpg"
   },
   {
     id: "lever-limit-switch",
@@ -115,7 +118,8 @@ export const products = [
       "Supports counter-weight and rotary action mechanisms"
     ],
     badge: "Safety Grade",
-    imageUrl: "/images/lever-type-limit-switch-500x500-1.webp"
+    imageUrl: "/images/lever-type-limit-switch-500x500-1.webp",
+    fallbackUrl: "https://kdcranes.com/wp-content/uploads/2023/01/lever-type-limit-switch-500x500-1.webp"
   },
   {
     id: "hydraulic-thruster-brake",
@@ -136,12 +140,13 @@ export const products = [
       "Complies with IS 3938 crane manufacturing standards"
     ],
     badge: "Heavy Duty",
-    imageUrl: "/images/pic-6-1.jpg"
+    imageUrl: "/images/pic-6-1.jpg",
+    fallbackUrl: "https://kdcranes.com/wp-content/uploads/2023/01/pic-6-1.jpg"
   },
   {
     id: "wire-rope-hoist-1t-10t",
     slug: "electric-wire-rope-hoist",
-    name: "Electric Wire Rope Hoist & Chain Pulley Block (1T - 10T)",
+    name: "Electric Wire Rope Hoist Unit (1T - 10T)",
     category: "hoists",
     shortDesc: "High capacity electric wire rope hoists and heavy duty manual chain pulley blocks available in 1Ton, 2Ton, 3Ton, 5Ton, 7.5Ton, and 10Ton configurations.",
     specs: [
@@ -157,28 +162,284 @@ export const products = [
       "Overload protection limiter option available"
     ],
     badge: "Top Rated",
-    imageUrl: "/images/pic-16-1.jpeg"
+    imageUrl: "/images/pic-1.jpg",
+    fallbackUrl: "https://kdcranes.com/wp-content/uploads/2023/01/pic-1.jpg"
   },
   {
-    id: "crane-trolleys-and-hooks",
-    slug: "crane-trolleys-and-forged-hooks",
-    name: "Gear Trolleys, MS Trolleys & Forged Crane Hooks",
+    id: "electric-travelling-trolley",
+    slug: "electric-travelling-trolley",
+    name: "Electric Travelling Trolley Assembly",
     category: "hoists",
-    shortDesc: "Complete range of I-Beam Trolleys, PVC Cable Carry Trolleys, Gantry Travelling Trolleys, Plane Wheels, Gear Wheels, Gear Shafts, and Forged Crane Hooks (1T to 10T).",
+    shortDesc: "Motorized electric travelling trolley designed for smooth I-beam and monorail crane travel.",
     specs: [
-      { key: "Capacity Range", value: "1 Ton to 10 Ton" },
-      { key: "Trolley Options", value: "Gear Trolley, Push-Pull, PVC Festoon Cable Trolley, MS Trolley" },
-      { key: "Wheel Material", value: "Forged Alloy Steel / Cast Iron C.I. Wheels" },
-      { key: "Hook Standard", value: "Forged Steel Shank Hook with Safety Latch (IS 3815)" }
+      { key: "Capacity", value: "1Ton to 10Ton" },
+      { key: "Motor Power", value: "0.4kW to 1.5kW 415V" },
+      { key: "Beam Flange Width", value: "75mm - 200mm" }
     ],
     features: [
-      "Precision machined wheels with sealed ball bearings",
-      "Adjustable flange width for varying beam sizes",
-      "Heavy duty Festoon cable carry trolleys for smooth festoon cable movement",
-      "Forged crane hooks tested under 200% proof load"
+      "Heavy duty forged steel wheels",
+      "Smooth acceleration & deceleration motor reduction gearbox"
     ],
-    badge: "Essential",
-    imageUrl: "/images/WhatsApp-Image-2023-01-28-at-15.20.04.jpeg"
+    badge: "Heavy Duty",
+    imageUrl: "/images/pic-2.jpg",
+    fallbackUrl: "https://kdcranes.com/wp-content/uploads/2023/01/pic-2.jpg"
+  },
+  {
+    id: "gear-wheel-and-shaft",
+    slug: "gear-wheel-and-gear-shaft",
+    name: "Gear Wheel & Pinion Shaft Assembly",
+    category: "brakes",
+    shortDesc: "Precision machined alloy steel gear wheels and pinion shafts for crane end carriage and hoist drive gearboxes.",
+    specs: [
+      { key: "Material", value: "EN9 / EN24 / Forged Alloy Steel" },
+      { key: "Hardening", value: "Induction Hardened Teeth (50-55 HRC)" },
+      { key: "Module", value: "Module 4 to Module 12" }
+    ],
+    features: [
+      "High fatigue load resistance and low gear noise",
+      "Custom tooth profiling as per drawing"
+    ],
+    badge: "Precision",
+    imageUrl: "/images/pic-3.jpg",
+    fallbackUrl: "https://kdcranes.com/wp-content/uploads/2023/01/pic-3.jpg"
+  },
+  {
+    id: "plane-wheel",
+    slug: "plane-wheel-for-end-carriage",
+    name: "Plane Wheel for Crane End Carriage",
+    category: "brakes",
+    shortDesc: "Flanged forged steel plane wheels for crane long travel and cross travel end trucks.",
+    specs: [
+      { key: "Diameter", value: "150mm to 500mm" },
+      { key: "Bearing Type", value: "Double Spherical Roller Bearings" },
+      { key: "Hardness", value: "300-350 BHN" }
+    ],
+    features: [
+      "Heavy load carrying capacity with double flange design",
+      "Pre-lubricated sealed bearings"
+    ],
+    badge: "Durable",
+    imageUrl: "/images/pic-4.jpg",
+    fallbackUrl: "https://kdcranes.com/wp-content/uploads/2023/01/pic-4.jpg"
+  },
+  {
+    id: "counter-weight-assembly",
+    slug: "counter-weight-assembly",
+    name: "Counter Weight Assembly for Limit Switch",
+    category: "switches",
+    shortDesc: "Cast iron counter weight and wire rope sling assembly for gravity operated overhoist limit switches.",
+    specs: [
+      { key: "Weight Range", value: "5kg, 10kg, 15kg" },
+      { key: "Material", value: "Graded Cast Iron C.I." },
+      { key: "Guide Ring", value: "Rubber Lined Guide Ring" }
+    ],
+    features: [
+      "Failsafe gravity trip mechanism",
+      "Corrosion resistant painted finish"
+    ],
+    badge: "Safety",
+    imageUrl: "/images/pic-5.jpg",
+    fallbackUrl: "https://kdcranes.com/wp-content/uploads/2023/01/pic-5.jpg"
+  },
+  {
+    id: "rotary-limit-switch",
+    slug: "rotary-geared-limit-switch",
+    name: "Rotary Geared Limit Switch",
+    category: "switches",
+    shortDesc: "Heavy duty rotary geared limit switch for multi-turn travel and height control on crane winches.",
+    specs: [
+      { key: "Gear Ratio", value: "1:10 to 1:200" },
+      { key: "Contacts", value: "2 / 4 Microswitches 10A" },
+      { key: "Enclosure", value: "IP65 Aluminum Housing" }
+    ],
+    features: [
+      "Adjustable cam discs for precise position cutoff",
+      "Direct shaft coupling design"
+    ],
+    badge: "Precision",
+    imageUrl: "/images/pic-7-1.jpg",
+    fallbackUrl: "https://kdcranes.com/wp-content/uploads/2023/01/pic-7-1.jpg"
+  },
+  {
+    id: "gravity-limit-switch",
+    slug: "gravity-type-limit-switch",
+    name: "Gravity Type Limit Switch for Overhoist",
+    category: "switches",
+    shortDesc: "Gravity weight trip limit switch for positive emergency upper limit cutoff on electric hoists.",
+    specs: [
+      { key: "Current Rating", value: "16A 500V AC" },
+      { key: "Operation", value: "Failsafe Gravity Trip" }
+    ],
+    features: [
+      "Prevents wire rope over-winding and hook collision",
+      "Heavy duty silver contacts"
+    ],
+    badge: "Failsafe",
+    imageUrl: "/images/pic-8-1.jpg",
+    fallbackUrl: "https://kdcranes.com/wp-content/uploads/2023/01/pic-8-1.jpg"
+  },
+  {
+    id: "anti-collision-device",
+    slug: "anti-collision-device",
+    name: "Infrared Optical Anti-Collision Device",
+    category: "switches",
+    shortDesc: "Infrared optical anti-collision sensor system to prevent crane-to-crane collision on shared runways.",
+    specs: [
+      { key: "Sensing Range", value: "3 Meters to 15 Meters" },
+      { key: "Relay Output", value: "Dual Stage Stop & Slowdown Relays" }
+    ],
+    features: [
+      "Dual stage detection (Warning slowdown & Emergency stop)",
+      "High optical reflector included"
+    ],
+    badge: "Optical Safety",
+    imageUrl: "/images/pic-9.jpg",
+    fallbackUrl: "https://kdcranes.com/wp-content/uploads/2023/01/pic-9.jpg"
+  },
+  {
+    id: "hoist-pendant-switch",
+    slug: "hoist-pushbutton-pendant-switch",
+    name: "Crane Pushbutton Pendant Station",
+    category: "remotes",
+    shortDesc: "Ergonomic 4-button to 12-button crane pendant control station with emergency stop.",
+    specs: [
+      { key: "Protection", value: "IP65 Yellow ABS Enclosure" },
+      { key: "Buttons", value: "Single / Dual Speed Buttons + E-Stop" }
+    ],
+    features: [
+      "Mechanical interlocked contacts to prevent short circuits",
+      "Internal steel strain relief wire cable"
+    ],
+    badge: "Ergonomic",
+    imageUrl: "/images/pic-11.jpg",
+    fallbackUrl: "https://kdcranes.com/wp-content/uploads/2023/01/pic-11.jpg"
+  },
+  {
+    id: "pvc-cable-carry-trolley",
+    slug: "pvc-festoon-cable-carry-trolley",
+    name: "PVC Cable Carry Festoon Trolley",
+    category: "hoists",
+    shortDesc: "PVC coated festoon cable trolleys for supporting flat cables along C-track festoon systems.",
+    specs: [
+      { key: "Track Type", value: "C-Rail / Diamond Track" },
+      { key: "Carrying Capacity", value: "25kg per trolley" }
+    ],
+    features: [
+      "Smooth nylon wheels with ball bearings",
+      "Protects flat electrical power cables from abrasion"
+    ],
+    badge: "Festoon",
+    imageUrl: "/images/pic-12-1.jpg",
+    fallbackUrl: "https://kdcranes.com/wp-content/uploads/2023/01/pic-12-1.jpg"
+  },
+  {
+    id: "i-beam-trolley",
+    slug: "i-beam-festoon-cable-trolley",
+    name: "I-Beam Heavy Duty Festoon Cable Trolley",
+    category: "hoists",
+    shortDesc: "Heavy duty steel festoon cable trolley designed to run directly on I-beam flanges.",
+    specs: [
+      { key: "Beam Width", value: "100mm to 250mm" },
+      { key: "Load Rating", value: "100kg per trolley" }
+    ],
+    features: [
+      "Adjustable width clamps for various beam sizes",
+      "Steel cable saddles for heavy power cables"
+    ],
+    badge: "Heavy Load",
+    imageUrl: "/images/pic-13.jpg",
+    fallbackUrl: "https://kdcranes.com/wp-content/uploads/2023/01/pic-13.jpg"
+  },
+  {
+    id: "mild-steel-trolley",
+    slug: "mild-steel-push-pull-trolley",
+    name: "Mild Steel Push-Pull Trolley",
+    category: "hoists",
+    shortDesc: "Manual push-pull trolley for manual hoist suspension and travel along I-beams.",
+    specs: [
+      { key: "Capacity", value: "0.5 Ton to 5 Ton" },
+      { key: "Wheels", value: "Precision Machined Steel Wheels" }
+    ],
+    features: [
+      "Easy manual push-pull operation",
+      "Safety bumper lugs included"
+    ],
+    badge: "Manual",
+    imageUrl: "/images/pic-14-1.jpeg",
+    fallbackUrl: "https://kdcranes.com/wp-content/uploads/2023/01/pic-14-1.jpeg"
+  },
+  {
+    id: "gantry-travelling-trolley",
+    slug: "gantry-crane-travelling-trolley",
+    name: "Gantry Travelling Trolley Assembly",
+    category: "hoists",
+    shortDesc: "Heavy duty travelling trolley assembly engineered for gantry and semi-gantry cranes.",
+    specs: [
+      { key: "Capacity", value: "3 Ton to 10 Ton" },
+      { key: "Drive", value: "Geared / Motorized Options" }
+    ],
+    features: [
+      "Rigid box frame construction",
+      "Dual drive wheel synchronisation"
+    ],
+    badge: "Gantry Grade",
+    imageUrl: "/images/pic-15-1.jpeg",
+    fallbackUrl: "https://kdcranes.com/wp-content/uploads/2023/01/pic-15-1.jpeg"
+  },
+  {
+    id: "crane-hoist-hook-1t-10t",
+    slug: "crane-hoist-forged-shank-hook",
+    name: "Forged Steel Crane Hoist Hook (1T - 10T)",
+    category: "hoists",
+    shortDesc: "Forged shank crane hooks manufactured according to IS 3815 specifications with 360-degree swivel bearing.",
+    specs: [
+      { key: "Capacity", value: "1 Ton, 2 Ton, 3 Ton, 5 Ton, 7.5 Ton, 10 Ton" },
+      { key: "Material", value: "Forged Carbon Steel / Alloy Steel (Class 4 / Class 5)" },
+      { key: "Test Certificate", value: "200% Proof Load Tested" }
+    ],
+    features: [
+      "Spring loaded heavy duty safety latch",
+      "Thrust ball bearing for smooth 360-degree rotation"
+    ],
+    badge: "Certified Hook",
+    imageUrl: "/images/pic-16-1.jpeg",
+    fallbackUrl: "https://kdcranes.com/wp-content/uploads/2023/01/pic-16-1.jpeg"
+  },
+  {
+    id: "chain-pulley-block-hook",
+    slug: "chain-pulley-block-top-bottom-hook",
+    name: "Chain Pulley Block Top & Bottom Hook Assembly",
+    category: "hoists",
+    shortDesc: "Top and bottom replacement hooks for manual and electrical chain pulley blocks.",
+    specs: [
+      { key: "Capacity", value: "1T, 2T, 3T, 5T" },
+      { key: "Latch", value: "Heavy Duty Spring Latch" }
+    ],
+    features: [
+      "Drop forged alloy steel construction",
+      "High ductility shank preventing brittle failure"
+    ],
+    badge: "Forged",
+    imageUrl: "/images/pic-17-1.jpeg",
+    fallbackUrl: "https://kdcranes.com/wp-content/uploads/2023/01/pic-17-1.jpeg"
+  },
+  {
+    id: "chain-hoist-unit",
+    slug: "electric-chain-hoist-unit",
+    name: "Electric Chain Hoist Unit (1T - 5T)",
+    category: "hoists",
+    shortDesc: "Compact electric chain hoist with grade 80 load chain and dual limit switches.",
+    specs: [
+      { key: "Capacity", value: "1Ton, 2Ton, 3Ton, 5Ton" },
+      { key: "Chain Grade", value: "G80 Alloy Steel Calibrated Chain" }
+    ],
+    features: [
+      "Conical rotor motor with built-in mechanical brake",
+      "Chain container canvas bag included"
+    ],
+    badge: "Compact",
+    imageUrl: "/images/pic-18-1.jpeg",
+    fallbackUrl: "https://kdcranes.com/wp-content/uploads/2023/01/pic-18-1.jpeg"
   },
   {
     id: "gravity-type-collector",
@@ -196,82 +457,92 @@ export const products = [
       "Minimal wear and zero contact loss during crane motion"
     ],
     badge: "Precision",
-    imageUrl: "/images/gravity-type-current-collector-500x500-1.webp"
+    imageUrl: "/images/gravity-type-current-collector-500x500-1.webp",
+    fallbackUrl: "https://kdcranes.com/wp-content/uploads/2023/01/gravity-type-current-collector-500x500-1.webp"
+  },
+  {
+    id: "copper-current-collector-shoe-125a",
+    slug: "copper-current-collector-shoe-125a",
+    name: "Copper Current Collector Shoe 125A",
+    category: "collectors",
+    shortDesc: "Pure electrolytic copper replacement collector shoes for 125A shrouded busbars.",
+    specs: [
+      { key: "Ampere", value: "125 Amp" },
+      { key: "Material", value: "99.9% Electrolytic Copper" }
+    ],
+    features: [
+      "Self-lubricating graphite mix option",
+      "High wear life"
+    ],
+    badge: "Spare Shoe",
+    imageUrl: "/images/eot-crane-copper-current-collector-shoe-125-amps-500x500-1.webp",
+    fallbackUrl: "https://kdcranes.com/wp-content/uploads/2023/01/eot-crane-copper-current-collector-shoe-125-amps-500x500-1.webp"
+  },
+  {
+    id: "carbon-brush-current-collector",
+    slug: "carbon-brush-current-collector-shoe",
+    name: "Carbon Brush Current Collector Shoe",
+    category: "collectors",
+    shortDesc: "High conductivity carbon graphite brush collector shoes for copper conductor busbars.",
+    specs: [
+      { key: "Rating", value: "60A to 200A" },
+      { key: "Material", value: "Silver-Graphite / Carbon Brush" }
+    ],
+    features: [
+      "Zero spark transmission",
+      "Low noise sliding contact"
+    ],
+    badge: "Carbon Brush",
+    imageUrl: "/images/crane-current-collector-carbon-brush-500x500-1.webp",
+    fallbackUrl: "https://kdcranes.com/wp-content/uploads/2023/01/crane-current-collector-carbon-brush-500x500-1.webp"
+  },
+  {
+    id: "festoon-system-whatsapp",
+    slug: "crane-festoon-cable-system-complete",
+    name: "Complete Heavy Duty Crane Festoon Cable System",
+    category: "hoists",
+    shortDesc: "Complete festoon system including C-rail tracks, tow trolleys, cable carry trolleys, and end stops.",
+    specs: [
+      { key: "Track Length", value: "10m to 100m" },
+      { key: "Cable Capacity", value: "Flat & Round Power Cables" }
+    ],
+    features: [
+      "Smooth low-resistance movement along crane runway",
+      "Complete mounting hardware kit included"
+    ],
+    badge: "Complete System",
+    imageUrl: "/images/WhatsApp-Image-2023-01-28-at-15.20.04.jpeg",
+    fallbackUrl: "https://kdcranes.com/wp-content/uploads/2023/01/WhatsApp-Image-2023-01-28-at-15.20.04.jpeg"
   }
 ];
 
 export const heroSlides = [
   {
-    title: "KD ENTERPRISES SUPERBRAND QUALITY",
-    subtitle: "Pioneer manufacturer of EOT Crane Spare Parts, DSL Busbar Systems, and Current Collectors in Ludhiana, Punjab.",
-    btnText: "Explore Portfolio",
-    btnLink: "/products",
-    badgeImg: "/images/exclusive-gold-badge-color-46166840-150x150.jpg",
-    bgPattern: "linear-gradient(135deg, #021245 0%, #0a2570 100%)"
+    id: 1,
+    title: "K.D. CRANE SPARE PARTS & ACCESSORIES",
+    subtitle: "Pioneer & Largest Manufacturer of E.O.T Crane Spare Parts, DSL Busbars, and Current Collectors in Ludhiana, Punjab.",
+    bgImage: "https://kdcranes.com/wp-content/uploads/2023/01/banner-2-1.jpg",
+    localBg: "/images/banner-2-1.jpg",
+    btnText: "Explore Products",
+    btnLink: "/products"
   },
   {
-    title: "DSL Busbar Systems (125Amp G.I.)",
-    subtitle: "Safe, compact, and touch-proof enclosed shrouded conductor bus bar systems from 60A to 400A.",
-    btnText: "View Busbar Specs",
-    btnLink: "/products/dsl-busbar-system-125amp",
-    badgeImg: "/images/banner-2-1.jpg",
-    bgPattern: "linear-gradient(135deg, #061954 0%, #0d3b9e 100%)"
+    id: 2,
+    title: "DSL BUSBAR SYSTEM – 125 AMP G.I. COATED",
+    subtitle: "High safety shrouded conductor busbar systems available in 60A, 100A, 125A, 200A, 250A, and 400A ratings.",
+    bgImage: "https://kdcranes.com/wp-content/uploads/2023/01/banner5.jpg",
+    localBg: "/images/banner5.jpg",
+    btnText: "View Busbar Systems",
+    btnLink: "/products/dsl-busbar-system-125amp"
   },
   {
-    title: "EOT Crane Current Collectors",
-    subtitle: "Heavy duty electrolytic copper current collector shoes (60A, 100A, 125A, 200A, 250A, 400A).",
-    btnText: "View Collector Range",
-    btnLink: "/products/eot-crane-current-collector",
-    badgeImg: "/images/eot-cranes-current-collector-500x500-1.webp",
-    bgPattern: "linear-gradient(135deg, #021245 0%, #1a4da6 100%)"
-  },
-  {
-    title: "Wireless Radio Remote Controls",
-    subtitle: "Ergonomic 6D & 8D industrial wireless radio remote control transmitters with IP65 protection.",
-    btnText: "Download Brochure",
-    btnLink: "/download",
-    badgeImg: "/images/pic-10-1.jpg",
-    bgPattern: "linear-gradient(135deg, #0b2066 0%, #021245 100%)"
-  },
-  {
-    title: "Lever Limit Switches for EOT Cranes",
-    subtitle: "Rugged die-cast aluminum lever limit switches with instant trip action for heavy duty cranes.",
-    btnText: "View Limit Switches",
-    btnLink: "/products/lever-limit-switch-for-eot-crane",
-    badgeImg: "/images/lever-type-limit-switch-500x500-1.webp",
-    bgPattern: "linear-gradient(135deg, #03144d 0%, #0c3384 100%)"
-  },
-  {
-    title: "Electro-Hydraulic Thruster Brakes",
-    subtitle: "Smooth braking and holding capacity up to 5000 Nm for crane hoist and travel drives.",
-    btnText: "View Thruster Brakes",
-    btnLink: "/products/hydraulic-thruster-brake",
-    badgeImg: "/images/pic-6-1.jpg",
-    bgPattern: "linear-gradient(135deg, #010c30 0%, #0c3384 100%)"
-  },
-  {
-    title: "Wire Rope Hoists & Chain Pulley Blocks",
-    subtitle: "Industrial lifting capacity from 1 Ton to 10 Ton with precision machined helical alloy gears.",
-    btnText: "Explore Hoists",
-    btnLink: "/products/electric-wire-rope-hoist",
-    badgeImg: "/images/pic-16-1.jpeg",
-    bgPattern: "linear-gradient(135deg, #041852 0%, #1346af 100%)"
-  },
-  {
-    title: "Crane Trolleys & Festoon Cable Systems",
-    subtitle: "Complete festoon cable carry trolleys, I-Beam trolleys, and 200% proof load tested forged hooks.",
-    btnText: "View Accessories",
-    btnLink: "/products/crane-trolleys-and-forged-hooks",
-    badgeImg: "/images/WhatsApp-Image-2023-01-28-at-15.20.04.jpeg",
-    bgPattern: "linear-gradient(135deg, #021245 0%, #082470 100%)"
-  },
-  {
-    title: "Direct Factory Sales - Ludhiana HQ",
-    subtitle: "Get factory-direct pricing and technical support directly from Mr. Pankesh Thakur & team.",
-    btnText: "Contact Factory",
-    btnLink: "/contact",
-    badgeImg: "/images/contact_us_banner_1_1787745511731.jpg",
-    bgPattern: "linear-gradient(135deg, #051a59 0%, #1a4da6 100%)"
+    id: 3,
+    title: "EOT CRANE CURRENT COLLECTOR (60A - 400A)",
+    subtitle: "Heavy duty copper current collector shoes, gravity type and spring loaded assemblies for overhead cranes.",
+    bgImage: "https://kdcranes.com/wp-content/uploads/2026/08/eot_crane_banner_2_1787744731192.jpg",
+    localBg: "/images/eot_crane_banner_2_1787744731192.jpg",
+    btnText: "View Collectors",
+    btnLink: "/products/eot-crane-current-collector"
   }
 ];
 
