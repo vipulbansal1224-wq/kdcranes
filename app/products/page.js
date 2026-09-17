@@ -314,7 +314,7 @@ export default function ProductsPage() {
                   style={{
                     height: "260px",
                     padding: "24px",
-                    background: "linear-gradient(180deg, #f8fafc 0%, #edf2f7 100%)",
+                    background: "#ffffff",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center"
@@ -330,10 +330,11 @@ export default function ProductsPage() {
                     }}
                     alt={prod.name}
                     style={{
-                      maxWidth: "100%",
-                      maxHeight: "100%",
+                      maxWidth: "92%",
+                      maxHeight: "92%",
                       objectFit: "contain",
-                      filter: "drop-shadow(0 10px 15px rgba(0,0,0,0.15))"
+                      mixBlendMode: "multiply",
+                      filter: "contrast(1.08) brightness(1.03) drop-shadow(0 10px 18px rgba(2, 18, 69, 0.16))"
                     }}
                   />
                 </div>

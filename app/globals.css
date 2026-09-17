@@ -690,20 +690,22 @@ button {
 }
 
 .product-img-box {
-  height: 220px;
-  background: #f1f5f9;
+  height: 240px;
+  background: #ffffff;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 18px;
   overflow: hidden;
 }
 
 .product-img-box img {
-  max-width: 90%;
-  max-height: 90%;
+  max-width: 92%;
+  max-height: 92%;
   object-fit: contain;
+  mix-blend-mode: multiply;
+  filter: contrast(1.08) brightness(1.03) drop-shadow(0 10px 18px rgba(2, 18, 69, 0.16));
   transition: var(--transition);
 }
 

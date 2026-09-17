@@ -10,8 +10,18 @@ export default function ProductModal({ product, onClose, onOpenQuote }) {
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
         <button className="modal-close" onClick={onClose}>×</button>
         <div style={{ display: "flex", gap: "20px", flexWrap: "wrap", marginBottom: "20px" }}>
-          <div style={{ width: "120px", height: "120px", background: "#f1f5f9", borderRadius: "12px", padding: "10px", display: "flex", alignItems: "center", justifyContent: "center" }}>
-            <img src={product.imageUrl} alt={product.name} style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain" }} />
+          <div style={{ width: "130px", height: "130px", background: "#ffffff", borderRadius: "12px", padding: "10px", display: "flex", alignItems: "center", justifyContent: "center", border: "1px solid #e2e8f0" }}>
+            <img
+              src={product.imageUrl}
+              alt={product.name}
+              style={{
+                maxWidth: "92%",
+                maxHeight: "92%",
+                objectFit: "contain",
+                mixBlendMode: "multiply",
+                filter: "contrast(1.08) brightness(1.03) drop-shadow(0 6px 14px rgba(2, 18, 69, 0.16))"
+              }}
+            />
           </div>
           <div style={{ flex: 1 }}>
             <span className="card-badge" style={{ position: "static", marginBottom: "8px", display: "inline-block" }}>{product.badge}</span>

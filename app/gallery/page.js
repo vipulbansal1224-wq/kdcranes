@@ -297,7 +297,7 @@ export default function GalleryPage() {
                     style={{
                       height: "260px",
                       padding: "24px",
-                      background: "linear-gradient(180deg, #f8fafc 0%, #edf2f7 100%)",
+                      background: "#ffffff",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
@@ -315,11 +315,12 @@ export default function GalleryPage() {
                       }}
                       alt={product.name}
                       style={{
-                        maxWidth: "100%",
-                        maxHeight: "100%",
+                        maxWidth: "92%",
+                        maxHeight: "92%",
                         objectFit: "contain",
-                        transition: "transform 0.5s ease",
-                        filter: "drop-shadow(0 10px 15px rgba(0,0,0,0.15))"
+                        mixBlendMode: "multiply",
+                        filter: "contrast(1.08) brightness(1.03) drop-shadow(0 10px 18px rgba(2, 18, 69, 0.16))",
+                        transition: "transform 0.5s ease"
                       }}
                       className="product-img-zoom"
                     />
@@ -542,7 +543,7 @@ export default function GalleryPage() {
                 {/* Image */}
                 <div
                   style={{
-                    background: "#f8fafc",
+                    background: "#ffffff",
                     borderRadius: "16px",
                     padding: "20px",
                     border: "1px solid #e2e8f0",
@@ -561,7 +562,13 @@ export default function GalleryPage() {
                       }
                     }}
                     alt={selectedProduct.name}
-                    style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain" }}
+                    style={{
+                      maxWidth: "92%",
+                      maxHeight: "92%",
+                      objectFit: "contain",
+                      mixBlendMode: "multiply",
+                      filter: "contrast(1.08) brightness(1.03) drop-shadow(0 10px 18px rgba(2, 18, 69, 0.16))"
+                    }}
                   />
                 </div>
 

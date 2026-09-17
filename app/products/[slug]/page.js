@@ -38,8 +38,18 @@ export default function SingleProductPage({ params }) {
       <section style={{ padding: "80px 0", background: "#ffffff" }}>
         <div className="container">
           <div className="about-grid">
-            <div style={{ background: "#f8fafc", padding: "40px", borderRadius: "16px", border: "1px solid #e2e8f0", display: "flex", alignItems: "center", justifyContent: "center" }}>
-              <img src={product.imageUrl} alt={product.name} style={{ maxWidth: "100%", maxHeight: "360px", objectFit: "contain" }} />
+            <div style={{ background: "#ffffff", padding: "40px", borderRadius: "16px", border: "1px solid #e2e8f0", display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <img
+                src={product.imageUrl}
+                alt={product.name}
+                style={{
+                  maxWidth: "92%",
+                  maxHeight: "360px",
+                  objectFit: "contain",
+                  mixBlendMode: "multiply",
+                  filter: "contrast(1.08) brightness(1.03) drop-shadow(0 12px 24px rgba(2, 18, 69, 0.18))"
+                }}
+              />
             </div>
 
             <div>
